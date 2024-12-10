@@ -93,3 +93,16 @@ git commit -m "Your commit message"
   git diff <branch1> <branch2>  # Compare two branches
   ```
 ---
+
+### `git checkout` `git branch` `git switch`
+**Purpose**: Work on different parts of the project without affecting the main codebase.  
+- `git branch`: Create, list, or delete branches.  
+- `git checkout` or `git switch`: Switch between branches.  
+
+**Commands**:
+```bash
+git branch <branch_name>        # Create a new branch
+git checkout <branch_name>      # Switch to the branch (legacy)
+git switch <branch_name>        # Modern equivalent to checkout
+```
+---
