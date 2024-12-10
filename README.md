@@ -208,3 +208,5 @@ git pull origin <branch>
 ```bash
 git clone <URL>
 ```
+---
+[Git Desktop App](https://github.com/apps/desktop)
