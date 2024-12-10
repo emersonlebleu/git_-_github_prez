@@ -106,3 +106,105 @@ git checkout <branch_name>      # Switch to the branch (legacy)
 git switch <branch_name>        # Modern equivalent to checkout
 ```
 ---
+
+## GitHub
+
+Documentation:  
+[github Docs](https://docs.github.com/en)
+
+GitHub is a **cloud-based platform** for hosting Git repositories.  
+- Allows collaboration by providing a central repository.  
+- Includes additional tools like Issues, Pull Requests, and Project Boards.  
+
+There are alternatives, such as [Bitbucket](https://bitbucket.org/product/).
+
+---
+
+### Create an Empty Repository
+
+- To link an existing local repository, ensure the remote repository is created without any initial files (e.g., README, license, or .gitignore).
+
+---
+
+### `git remote add`
+**Purpose**: Link a local repository to a remote repository.  
+
+**Command**:
+```bash
+git remote add origin <repository_url>
+```
+
+**Explanation**:  
+- `origin`: The default name for the remote repository. You can use a different name if desired.
+- `<repository_url>`: The URL of the remote repository (e.g., HTTPS or SSH).
+
+**Common Usage**:
+- After creating a new repository locally, use this command to associate it with a remote repository.
+
+**Verify**:
+```bash
+git remote -v
+```
+---
+
+### `git push`
+**Purpose**: Upload local changes to a remote repository.  
+
+**Command**:
+```bash
+git push origin <branch>
+```
+
+---
+
+### `git merge`
+
+**Purpose**:  
+Combines changes from one branch into another. Typically used to integrate changes from a feature branch into the main branch. Also can be used to merge another team member’s branch into your own to stay up-to-date.
+
+1. Switch to the branch you want to merge into:
+   ```bash
+   git checkout main
+   ```
+
+2. Merge the other branch into it:
+   ```bash
+   git merge feature-branch
+   ```
+
+3. Push the changes to the remote repository:
+   ```bash
+   git push origin main
+   ```
+
+#### Conflict Resolution
+   - If there are conflicting changes, Git will pause the merge and mark conflicts in the affected files.
+   - You must manually resolve conflicts, then complete the merge with:
+     ```bash
+     git add <resolved_file>
+     git commit
+     ```
+
+#### **Alternatives**
+- **`git rebase`**: Rewrites commit history instead of creating a merge commit. Use it for linearizing history but avoid on shared branches.
+- **`git cherry-pick`**: Use to pick specific commits from another branch instead of merging the entire branch.
+
+---
+
+### `git pull`
+**Purpose**: Fetch changes from the remote repository and integrate them into the local repository.  
+
+**Command**:
+```bash
+git pull origin <branch>
+```
+
+---
+
+### `git clone`
+**Purpose**: Copy a remote repository to your local machine.  
+
+**Command**:
+```bash
+git clone <URL>
+```
